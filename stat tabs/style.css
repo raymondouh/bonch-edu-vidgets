@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body, .center-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F8FFF3;
+}
+
+html {
+    overflow: hidden;
+}
+
+.center-container {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.palette {
+    background: #fff;
+    width: 100%;
+    max-width: 660px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px #ECECEC;
+    border-radius: 10px;
+}
+
+/*----------------copy from here-------------------*/
+.active {
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 18px;
+    line-height: 21px;
+    color: #353535 !important;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.group-stats {
+    min-height: 250px;
+    color: #353535;
+    width: 100%;
+}
+
+.gst-tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gst-tab {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(53, 53, 53, 0.2);
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.gst-tabs-contents {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gst-tab-content{}
+
+.gst-pie-diagram {
+    width: 220px;
+    height: 220px;
+    margin-right: 40px;
+}
+
+.group-performance,
+.group-attendance,
+.group-payment {
+    width: 40%;
+    min-width: 220px;
+    flex: auto;
+}
+
+.gst-line,
+.gst-line-bold {
+    min-width: 200px;
+    max-width: 220px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.gst-line-bold {
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.gst-line-bold .gst-line-value {
+    line-height: 21px;
+}
+
+.gst-line {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.gst-line-text {}
+
+.gst-line-value {
+    padding-left: 10px;
+    text-align: right;
+    flex: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.gst-students-list {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 440px;
+    overflow-x: auto;
+}
+
+.gst-student {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.student-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.student-image img {
+    width: 100%;
+}
+
+.student-name {
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.group-attendance .gst-line {
+    flex: auto;
+    max-width: 300px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.group-attendance .gst-line-value{
+    font-size: 15px;
+    line-height: 21px;
+}
+
+/*----------------to here-------------------*/

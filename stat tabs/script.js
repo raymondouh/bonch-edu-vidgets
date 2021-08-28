@@ -1,46 +1,121 @@
-let gstTabsContents;
-let tabs;
+
+/*data*/
+let performanceChart = {
+    type: 'pie',
+    data: {
+        labels: ['Обгоняют', 'Не допущены', 'Неуспевающие', 'Успевающие'],
+        datasets: [{
+            data: [6, 4, 5, 30],
+            backgroundColor: [
+                'rgba(219, 214, 98, 0.5)',
+                'rgba(215, 136, 63, 1)',
+                'rgba(186, 67, 67, 0.5)',
+                'rgba(89, 154, 78, 0.5)',
+            ],
+            borderWidth: 1,
+            hoverBorderWidth: 3,
+            hoverBorderColor: '#599A4E'
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
+    }
+};
+
+let attendanceChart = {
+    type: 'pie',
+    data: {
+        labels: ['С 1м прогулом', 'Успевающие', 'Не посещающие занятия', 'Без прогулов'],
+        datasets: [{
+            data: [6, 3, 1, 35],
+            backgroundColor: [
+                'rgba(219, 214, 98, 0.5)',
+                'rgba(215, 136, 63, 1)',
+                'rgba(186, 67, 67, 0.5)',
+                'rgba(89, 154, 78, 0.5)',
+            ],
+            borderWidth: 1,
+            hoverBorderWidth: 3,
+            hoverBorderColor: '#599A4E'
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
+    }
+};
+
+let paymentChart = {
+    type: 'pie',
+    data: {
+        labels: ['Не оплатили', 'Оплатили недавно'],
+        datasets: [{
+            data: [4, 4],
+            backgroundColor: [
+                'rgba(186, 67, 67, 0.5)',
+                'rgba(89, 154, 78, 0.5)',
+            ],
+            borderWidth: 1,
+            hoverBorderWidth: 3,
+            hoverBorderColor: '#599A4E'
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
+    }
+}
+/**/
 
 let lastTab;
 let lastTabContent;
 
-let pieDiagram;
+let pieDiagramPerformance;
+let pieDiagramAttendance;
+let pieDiagramPayment;
+
+let groupPerformanceTab;
+let groupAttendanceTab;
+let groupPaymentTab;
 
 window.onload = function() {
-    pieDiagram = document.getElementById('gst-pie-diagram');
+    pieDiagramPerformance = document.getElementById('gst-pie-diagram-performance');
+    pieDiagramAttendance = document.getElementById('gst-pie-diagram-attendance');
+    pieDiagramPayment = document.getElementById('gst-pie-diagram-payment');
+
     groupPerformanceTab = document.getElementById('group-performance');
     groupAttendanceTab = document.getElementById('group-attendance');
     groupPaymentTab = document.getElementById('group-payment');
+
     lastTab = document.getElementById('default-gst-tab');
     lastTabContent = groupPerformanceTab;
+
+    new Chart(pieDiagramPerformance, performanceChart);
+    new Chart(pieDiagramAttendance, attendanceChart);
+    new Chart(pieDiagramPayment, paymentChart);
 }
 
 function openGroupPerformanceTab() {
     closePreviousTab();
     setActiveTab(event.target);
     showTabContent(groupPerformanceTab)
-    let chart = new Chart(pieDiagram, {
-        type: 'pie',
-        data: {
-            datasets: [{
-                label: '# of Votes',
-                data: [6, 4, 5, 30],
-                backgroundColor: [
-                    'rgba(219, 214, 98, 0.5)',
-                    'rgba(215, 136, 63, 1)',
-                    'rgba(186, 67, 67, 0.5)',
-                    'rgba(89, 154, 78, 0.5)',
-                ],
-                borderWidth: 1
-            }]
-        }
-    });
 }
 
 function openGroupAttendanceTab() {
     closePreviousTab();
     setActiveTab(event.target);
     showTabContent(groupAttendanceTab)
+
 }
 
 function openGroupPaymentTab() {

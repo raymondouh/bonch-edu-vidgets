@@ -33,6 +33,20 @@ html {
 }
 
 /*----------------copy from here-------------------*/
+
+.gst-color-well{
+    background: rgba(89, 154, 78, 0.5);
+}
+.gst-color-good{
+    background: rgba(219, 214, 98, 0.5);
+}
+.gst-color-okay{
+    background: rgba(215, 136, 63, 1);
+}
+.gst-color-bad{
+    background: rgba(186, 67, 67, 0.5);
+}
+
 .active {
     font-style: normal;
     font-weight: bold !important;
@@ -42,17 +56,32 @@ html {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .show {
-    display: block;
+    display: flex !important;
+}
+
+.diagram-sample-color{
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.group-attendance .diagram-sample-color,
+.group-payment .diagram-sample-color{
+    margin-top: 3px;
 }
 
 .group-stats {
-    min-height: 250px;
+    min-height: 270px;
     color: #353535;
     width: 100%;
+    transition: .3s;
+    //transition-property: height;
 }
 
 .gst-tabs {
@@ -70,6 +99,10 @@ html {
     margin-bottom: 5px;
 }
 
+.gst-tab:hover{
+    color: #599A4E;
+}
+
 .gst-tabs-contents {
     display: flex;
     flex-wrap: wrap;
@@ -78,9 +111,11 @@ html {
 .gst-tab-content{}
 
 .gst-pie-diagram {
+    margin-top: 15px;
     width: 220px;
     height: 220px;
-    margin-right: 40px;
+    padding-right: 5px;
+    margin-right: 35px;
 }
 
 .group-performance,
@@ -140,6 +175,19 @@ html {
     overflow-x: auto;
 }
 
+.gst-students-list a{
+    color: #353535;
+    text-decoration: none;
+}
+
+.gst-students-list a:hover{
+    color: #599A4E;
+}
+
+.gst-students-list a:hover .student-image{
+    outline: 2px solid #599A4E;
+}
+
 .gst-student {
     margin-right: 10px;
     text-align: center;
@@ -178,6 +226,22 @@ html {
 .group-attendance .gst-line-value{
     font-size: 15px;
     line-height: 21px;
+}
+
+@media(max-width: 510px){
+    .gst-pie-diagram{
+        margin: 0 auto;
+    }
+    .gst-line,
+    .gst-line-bold{
+        max-width: 300px;
+    }
+    .gst-students-list{
+        justify-content: space-between;
+    }
+    .gst-tab{
+        width: 100%;
+    }
 }
 
 /*----------------to here-------------------*/

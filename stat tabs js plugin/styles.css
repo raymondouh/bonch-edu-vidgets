@@ -1,0 +1,215 @@
+.group-stats .gst-color-well{
+    background: rgba(89, 154, 78, 0.5);
+}
+.group-stats .gst-color-good{
+    background: rgba(219, 214, 98, 0.5);
+}
+.group-stats .gst-color-okay{
+    background: rgba(215, 136, 63, 1);
+}
+.group-stats .gst-color-bad{
+    background: rgba(186, 67, 67, 0.5);
+}
+
+.group-stats .active {
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 18px;
+    line-height: 21px;
+    color: #353535 !important;
+}
+
+.group-stats .hide {
+    display: none !important;
+}
+
+.group-stats .show {
+    display: flex !important;
+}
+
+.diagram-sample-color{
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.group-attendance .diagram-sample-color,
+.group-payment .diagram-sample-color{
+    margin-top: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.group-stats {
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 270px;
+    color: #353535;
+    width: 100%;
+    transition: .3s;
+    //transition-property: height;
+}
+
+.gst-tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gst-tab {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(53, 53, 53, 0.2);
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.gst-tab:hover{
+    color: #599A4E;
+}
+
+.gst-tabs-contents {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gst-tab-content{}
+
+.gst-pie-diagram {
+    margin-top: 15px;
+    width: 220px;
+    height: 220px;
+    padding-right: 5px;
+    margin-right: 35px;
+}
+
+.group-performance,
+.group-attendance,
+.group-payment {
+    width: 40%;
+    min-width: 220px;
+    flex: auto;
+}
+
+.gst-line,
+.gst-line-bold {
+    min-width: 200px;
+    max-width: 220px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.gst-line-bold {
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.gst-line-bold .gst-line-value {
+    line-height: 21px;
+}
+
+.gst-line {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.gst-line-text {}
+
+.gst-line-value {
+    padding-left: 10px;
+    text-align: right;
+    flex: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.gst-students-list {
+    padding-top: 3px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 440px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.gst-students-list a{
+    color: #353535;
+    text-decoration: none;
+}
+
+.gst-students-list a:hover{
+    color: #599A4E;
+}
+
+.gst-students-list a:hover .student-image{
+    outline: 2px solid #599A4E;
+}
+
+.gst-student {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.student-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.student-image img {
+    width: 100%;
+}
+
+.student-name {
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.group-attendance .gst-line {
+    flex: auto;
+    max-width: 300px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.group-attendance .gst-line-value{
+    font-size: 15px;
+    line-height: 21px;
+}
+
+@media(max-width: 510px){
+    .gst-pie-diagram{
+        margin: 0 auto;
+    }
+    .gst-line,
+    .gst-line-bold{
+        max-width: 300px;
+    }
+    .gst-students-list{
+        justify-content: space-between;
+    }
+    .gst-tab{
+        width: 100%;
+    }
+}

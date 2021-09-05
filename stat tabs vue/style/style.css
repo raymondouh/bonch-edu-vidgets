@@ -1,17 +1,53 @@
-.group-stats .gst-color-well{
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body, .center-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F8FFF3;
+}
+
+html {
+    overflow: hidden;
+}
+
+.center-container {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.palette {
+    background: #fff;
+    width: 100%;
+    max-width: 660px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px #ECECEC;
+    border-radius: 10px;
+}
+
+/*----------------copy from here-------------------*/
+
+.gst-color-well{
     background: rgba(89, 154, 78, 0.5);
 }
-.group-stats .gst-color-good{
+.gst-color-good{
     background: rgba(219, 214, 98, 0.5);
 }
-.group-stats .gst-color-okay{
+.gst-color-okay{
     background: rgba(215, 136, 63, 1);
 }
-.group-stats .gst-color-bad{
+.gst-color-bad{
     background: rgba(186, 67, 67, 0.5);
 }
 
-.group-stats .active {
+.active {
     font-style: normal;
     font-weight: bold !important;
     font-size: 18px;
@@ -19,11 +55,11 @@
     color: #353535 !important;
 }
 
-.group-stats .hide {
+.hide {
     display: none !important;
 }
 
-.group-stats .show {
+.show {
     display: flex !important;
 }
 
@@ -37,14 +73,10 @@
 
 .group-attendance .diagram-sample-color,
 .group-payment .diagram-sample-color{
-    margin-top: 2px;
-    width: 15px;
-    height: 15px;
+    margin-top: 3px;
 }
 
 .group-stats {
-    max-width: 700px;
-    margin: 0 auto;
     min-height: 270px;
     color: #353535;
     width: 100%;
@@ -79,7 +111,6 @@
 .gst-tab-content{}
 
 .gst-pie-diagram {
-    padding: 3px;
     margin-top: 15px;
     width: 220px;
     height: 220px;
@@ -137,13 +168,11 @@
 }
 
 .gst-students-list {
-    padding-top: 3px;
     margin-top: 10px;
     display: flex;
     flex-wrap: nowrap;
     max-width: 440px;
     overflow-x: auto;
-    overflow-y: hidden;
 }
 
 .gst-students-list a{
@@ -174,7 +203,6 @@
 
 .student-image img {
     width: 100%;
-    height: 100%;
 }
 
 .student-name {
@@ -215,3 +243,5 @@
         width: 100%;
     }
 }
+
+/*----------------to here-------------------*/

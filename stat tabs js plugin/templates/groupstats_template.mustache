@@ -69,46 +69,18 @@
                     </div>
                 </div>
                 <div class="gst-students-list">
-                    <a href="">
+                    {{#problemstudents}}
+                    <a href="{{userprofile}}">
                         <div class="gst-student">
                             <div class="student-image">
-                                <img src="{{imgurl}}"/>
+                                <img src="{{picturesrc}}"/>
                             </div>
                             <div class="student-name">
-                                Иван Иванов
+                                {{fullname}}
                             </div>
                         </div>
                     </a>
-                    <a href="">
-                        <div class="gst-student">
-                            <div class="student-image">
-                                <img src="{{imgurl}}"/>
-                            </div>
-                            <div class="student-name">
-                                Иван Иванов
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="gst-student">
-                            <div class="student-image">
-                                <img src="{{imgurl}}"/>
-                            </div>
-                            <div class="student-name">
-                                Иван Иванов
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="gst-student">
-                            <div class="student-image">
-                                <img src="{{imgurl}}"/>
-                            </div>
-                            <div class="student-name">
-                                Иван Иванов
-                            </div>
-                        </div>
-                    </a>
+                    {{/problemstudents}}
                 </div>
             </div>
         </div>

@@ -103,7 +103,36 @@ window.onload = function() {
     new Chart(pieDiagramPerformance, performanceChart);
     new Chart(pieDiagramAttendance, attendanceChart);
     new Chart(pieDiagramPayment, paymentChart);
+    /************************************/
+    let studentsWell = document.getElementById('well-students');
+    let studentsOkay = document.getElementById('okay-students');
+    let studentsWellList = document.getElementById('well-students-list');
+    let studentsOkayList = document.getElementById('okay-students-list');
+    let lastList = studentsWellList;
+
+    studentsWell.addEventListener('click', () =>{
+        closeList(lastList);
+        openList(studentsWellList);
+        lastList = studentsWellList;
+    });
+    studentsOkay.addEventListener('click', () =>{
+
+        closeList(lastList);
+        openList(studentsOkayList);
+        lastList = studentsOkayList;
+    });
 }
+
+
+function closeList(list){
+    list.classList.remove('show-list');
+    list.classList.add('hide-list');
+}
+function openList(list){
+    list.classList.remove('hide-list');
+    list.classList.add('show-list');
+}
+
 
 function openGroupPerformanceTab() {
     closePreviousTab();

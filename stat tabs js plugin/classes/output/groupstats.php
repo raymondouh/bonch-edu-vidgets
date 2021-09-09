@@ -40,7 +40,8 @@ class groupstats implements renderable, templatable
             $this->userfullname = $user->firstname . ' ' . $user->lastname;
             $this->userprofile = $CFG->wwwroot . '/user/view.php?id=' . $user->id . '&amp;course=' . $this->course->id;
             $this->get_student_performance($user);
-
+            $this->get_student_attendance($user);
+            $this->get_student_payment($user);
             //test: collect all students
             $this->set_user_array($this->test);
         }
@@ -95,7 +96,7 @@ class groupstats implements renderable, templatable
 
     private function get_student_attendance($student)
     {
-
+        $this->set_user_array($this->wellattendingstudents);
     }
 
     /**
@@ -108,7 +109,7 @@ class groupstats implements renderable, templatable
 
     private function get_student_payment($student)
     {
-
+        $this->set_user_array($this->paystudents);
     }
 
     /**

@@ -11,372 +11,704 @@
     <div class="center-container">
         <div class="palette">
             <!----------------copy from here------------------->
-            <div class="group-stats" id="group-stats" on>
+            <div class="group-stats" id="group-stats" on="">
 
-                <div class="gst-tabs">
-                    <div class="gst-tab active" id="default-gst-tab" onclick="openGroupPerformanceTab()">
-                        Успеваемость группы
-                    </div>
-                    <div class="gst-tab" onclick="openGroupAttendanceTab()">
-                        Посещаемость
-                    </div>
-                    <div class="gst-tab" onclick="openGroupPaymentTab()">
-                        Оплата
-                    </div>
-                </div>
+        <div class="gst-tabs" id="yui_3_17_2_1_1631169486178_27">
+            <div class="gst-tab active" id="GroupPerformanceTab">
+                Успеваемость группы
+            </div>
+            <div class="gst-tab" id="GroupAttendanceTab">
+                Посещаемость
+            </div>
+            <div class="gst-tab" id="GroupPaymentTab">
+                Оплата
+            </div>
+        </div>
 
-                <div class="gst-tabs-contents" id="group-performance">
+        <div class="gst-tabs-contents show" id="group-performance">
 
-                    <div class="gst-pie-diagram">
-                        <canvas id="gst-pie-diagram-performance" width="100%" height="100%"></canvas>
+            <div class="gst-pie-diagram">
+                <canvas id="gst-pie-diagram-performance" style="display: block; box-sizing: border-box; height: 230px; width: 230px;" width="230" height="230"></canvas>
+            </div>
+
+            <div class="group-performance" id="yui_3_17_2_1_1631169486178_31">
+                <div class="gst-line-bold">
+                    <div class="gst-line-text">
+                        Занятий пройдено
                     </div>
-
-                    <div class="group-performance">
-                        <div class="gst-line-bold">
-                            <div class="gst-line-text">
-                                Занятий пройдено
-                            </div>
-                            <div class="gst-line-value">
-                                12
-                            </div>
-                        </div>
-                        <div class="gst-line" id="well-students">
-                            <div class="diagram-sample-color gst-color-well"></div>
-                            <div class="gst-line-text">
-                                Отличники
-                            </div>
-                            <div class="gst-line-value">
-                                30/45
-                            </div>
-                        </div>
-                        <div class="gst-line" id="okay-students">
-                            <div class="diagram-sample-color gst-color-good"></div>
-                            <div class="gst-line-text">
-                                Хорошисты
-                            </div>
-                            <div class="gst-line-value">
-                                6/45
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-okay"></div>
-                            <div class="gst-line-text">
-                                Успевающие
-                            </div>
-                            <div class="gst-line-value">
-                                4/45
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-bad"></div>
-                            <div class="gst-line-text">
-                                Неуспевающие
-                            </div>
-                            <div class="gst-line-value">
-                                5/45
-                            </div>
-                        </div>
-                        <div id="okay-students-list" class="hide-list">
-                            <div class="gst-line-bold">
-                                <div class="gst-line-text">
-                                    Хорошисты
-                                </div>
-                            </div>
-                            <div class="gst-students-list">
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div id="well-students-list" class="show-list">
-                            <div class="gst-line-bold">
-                                <div class="gst-line-text">
-                                    Отличники
-                                </div>
-                            </div>
-                            <div class="gst-students-list">
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="">
-                                    <div class="gst-student">
-                                        <div class="student-image">
-                                            <img src="img/ivanov_student.png" />
-                                        </div>
-                                        <div class="student-name">
-                                            Иван Иванов
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="gst-line-value">
+                        12
                     </div>
                 </div>
-
-                <div class="gst-tabs-contents hide" id="group-attendance">
-
-                    <div class="gst-pie-diagram">
-                        <canvas id="gst-pie-diagram-attendance" width="100%" height="100%"></canvas>
+                <div class="gst-line active" id="well-students">
+                    <div class="diagram-sample-color gst-color-well"></div>
+                    <div class="gst-line-text">
+                        Отличники
                     </div>
-
-                    <div class="group-attendance">
-                        <div class="gst-line-bold">
-                            <div class="gst-line-text">
-                                Занятий пройдено
-                            </div>
-                            <div class="gst-line-value">
-                                12
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-well"></div>
-                            <div class="gst-line-text">
-                                Без прогулов
-                            </div>
-                            <div class="gst-line-value">
-                                35/45
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-good"></div>
-                            <div class="gst-line-text">
-                                С 1-м прогулом
-                            </div>
-                            <div class="gst-line-value">
-                                6/45
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-okay"></div>
-                            <div class="gst-line-text">
-                                Успевающие
-                            </div>
-                            <div class="gst-line-value">
-                                3/45
-                            </div>
-                        </div>
-                        <div class="gst-line">
-                            <div class="diagram-sample-color gst-color-bad"></div>
-                            <div class="gst-line-text">
-                                Не посещающие занятия
-                            </div>
-                            <div class="gst-line-value">
-                                1/45
-                            </div>
-                        </div>
-                        <div class="gst-students-list">
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="gst-line-value" id="yui_3_17_2_1_1631169486178_35">
+                        4/16
                     </div>
                 </div>
-
-                <div class="gst-tabs-contents hide" id="group-payment">
-                    <div class="gst-pie-diagram">
-                        <canvas id="gst-pie-diagram-payment" width="100%" height="100%"></canvas>
+                <div class="gst-line" id="good-students">
+                    <div class="diagram-sample-color gst-color-good"></div>
+                    <div class="gst-line-text">
+                        Хорошисты
                     </div>
-                    <div class="group-payment">
-                        <div class="gst-line-bold">
-                            <div class="diagram-sample-color gst-color-bad"></div>
-                            <div class="gst-line-text">
-                                Не оплатили
+                    <div class="gst-line-value" id="yui_3_17_2_1_1631169486178_32">
+                        8/16
+                    </div>
+                </div>
+                <div class="gst-line" id="okay-students">
+                    <div class="diagram-sample-color gst-color-okay"></div>
+                    <div class="gst-line-text">
+                        Успевающие
+                    </div>
+                    <div class="gst-line-value" id="yui_3_17_2_1_1631169486178_33">
+                        3/16
+                    </div>
+                </div>
+                <div class="gst-line" id="bad-students">
+                    <div class="diagram-sample-color gst-color-bad"></div>
+                    <div class="gst-line-text">
+                        Неуспевающие
+                    </div>
+                    <div class="gst-line-value" id="yui_3_17_2_1_1631169486178_34">
+                        1/16
+                    </div>
+                </div>
+                <div id="well-students-list" class="student-list show">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Отличники
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                        <a href="http://localhost/user/view.php?id=18&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/77/user/icon/boost/f2?rev=155">
+                                </div>
+                                <div class="student-name">
+                                    Виктория Романова
+                                </div>
                             </div>
-                        </div>
-                        <div class="gst-students-list">
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=9&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/68/user/icon/boost/f2?rev=209">
                                 </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                                <div class="student-name">
+                                    Семен Семенов
                                 </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="gst-line-bold">
-                            <div class="diagram-sample-color gst-color-well"></div>
-                            <div class="gst-line-text">
-                                Оплатили недавно
                             </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=10&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/69/user/icon/boost/f2?rev=218">
+                                </div>
+                                <div class="student-name">
+                                    Федор Федоров
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=16&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/75/user/icon/boost/f2?rev=146">
+                                </div>
+                                <div class="student-name">
+                                    Виктория Частая
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="good-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Хорошисты
                         </div>
-                        <div class="gst-students-list">
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                    </div>
+                    <div class="gst-students-list">
+                        <a href="http://localhost/user/view.php?id=17&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/76/user/icon/boost/f2?rev=128">
                                 </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                                <div class="student-name">
+                                    Анастасия Викторова
                                 </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=11&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/70/user/icon/boost/f2?rev=164">
                                 </div>
-                            </a>
-                            <a href="">
-                                <div class="gst-student">
-                                    <div class="student-image">
-                                        <img src="img/ivanov_student.png" />
-                                    </div>
-                                    <div class="student-name">
-                                        Иван Иванов
-                                    </div>
+                                <div class="student-name">
+                                    Виталий Витальев
                                 </div>
-                            </a>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=14&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/73/user/icon/boost/f2?rev=173">
+                                </div>
+                                <div class="student-name">
+                                    Даниил Данилов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=3&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/48/user/icon/boost/f2?rev=89">
+                                </div>
+                                <div class="student-name">
+                                    Иван Иванов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=12&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/71/user/icon/boost/f2?rev=191">
+                                </div>
+                                <div class="student-name">
+                                    Константин Константинов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=13&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/72/user/icon/boost/f2?rev=200">
+                                </div>
+                                <div class="student-name">
+                                    Матвей Матвеев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=4&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/49/user/icon/boost/f2?rev=98">
+                                </div>
+                                <div class="student-name">
+                                    Петр Петров
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=15&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/74/user/icon/boost/f2?rev=182">
+                                </div>
+                                <div class="student-name">
+                                    Екатерина Редкая
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="okay-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Успевающие
                         </div>
+                    </div>
+                    <div class="gst-students-list">
+                        <a href="http://localhost/user/view.php?id=6&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/51/user/icon/boost/f2?rev=71">
+                                </div>
+                                <div class="student-name">
+                                    Андрей Андреев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=8&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/67/user/icon/boost/f2?rev=137">
+                                </div>
+                                <div class="student-name">
+                                    Артем Артемьев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=5&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/50/user/icon/boost/f2?rev=80">
+                                </div>
+                                <div class="student-name">
+                                    Виктор Викторов
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="bad-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Неуспевающие
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                        <a href="http://localhost/user/view.php?id=7&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/66/user/icon/boost/f2?rev=119">
+                                </div>
+                                <div class="student-name">
+                                    Алексей Алексеев
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="gst-tabs-contents hide" id="group-attendance">
+
+            <div class="gst-pie-diagram">
+                <canvas id="gst-pie-diagram-attendance" style="display: block; box-sizing: border-box; height: 230px; width: 230px;" width="230" height="230"></canvas>
+            </div>
+
+            <div class="group-attendance" id="yui_3_17_2_1_1631169486178_37">
+                <div class="gst-line-bold">
+                    <div class="gst-line-text">
+                        Занятий пройдено
+                    </div>
+                    <div class="gst-line-value">
+                        12
+                    </div>
+                </div>
+                <div class="gst-line selected" id="well-attending-students">
+                    <div class="diagram-sample-color gst-color-well"></div>
+                    <div class="gst-line-text" id="yui_3_17_2_1_1631169486178_36">
+                        Без прогулов
+                    </div>
+                    <div class="gst-line-value">
+                        16/16
+                    </div>
+                </div>
+                <div class="gst-line" id="good-attending-students">
+                    <div class="diagram-sample-color gst-color-good"></div>
+                    <div class="gst-line-text">
+                        С 1-м прогулом
+                    </div>
+                    <div class="gst-line-value">
+                        0/16
+                    </div>
+                </div>
+                <div class="gst-line" id="okay-attending-students">
+                    <div class="diagram-sample-color gst-color-okay"></div>
+                    <div class="gst-line-text">
+                        Успевающие
+                    </div>
+                    <div class="gst-line-value">
+                        0/16
+                    </div>
+                </div>
+                <div class="gst-line" id="bad-attending-students">
+                    <div class="diagram-sample-color gst-color-bad"></div>
+                    <div class="gst-line-text">
+                        Не посещающие занятия
+                    </div>
+                    <div class="gst-line-value">
+                        0/16
+                    </div>
+                </div>
+                <div id="well-attending-students-list" class="student-list show">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Без прогулов
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                        <a href="http://localhost/user/view.php?id=7&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/66/user/icon/boost/f2?rev=119">
+                                </div>
+                                <div class="student-name">
+                                    Алексей Алексеев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=6&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/51/user/icon/boost/f2?rev=71">
+                                </div>
+                                <div class="student-name">
+                                    Андрей Андреев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=8&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/67/user/icon/boost/f2?rev=137">
+                                </div>
+                                <div class="student-name">
+                                    Артем Артемьев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=5&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/50/user/icon/boost/f2?rev=80">
+                                </div>
+                                <div class="student-name">
+                                    Виктор Викторов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=17&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/76/user/icon/boost/f2?rev=128">
+                                </div>
+                                <div class="student-name">
+                                    Анастасия Викторова
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=11&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/70/user/icon/boost/f2?rev=164">
+                                </div>
+                                <div class="student-name">
+                                    Виталий Витальев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=14&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/73/user/icon/boost/f2?rev=173">
+                                </div>
+                                <div class="student-name">
+                                    Даниил Данилов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=3&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/48/user/icon/boost/f2?rev=89">
+                                </div>
+                                <div class="student-name">
+                                    Иван Иванов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=12&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/71/user/icon/boost/f2?rev=191">
+                                </div>
+                                <div class="student-name">
+                                    Константин Константинов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=13&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/72/user/icon/boost/f2?rev=200">
+                                </div>
+                                <div class="student-name">
+                                    Матвей Матвеев
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=4&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/49/user/icon/boost/f2?rev=98">
+                                </div>
+                                <div class="student-name">
+                                    Петр Петров
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=15&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/74/user/icon/boost/f2?rev=182">
+                                </div>
+                                <div class="student-name">
+                                    Екатерина Редкая
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=18&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/77/user/icon/boost/f2?rev=155">
+                                </div>
+                                <div class="student-name">
+                                    Виктория Романова
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=9&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/68/user/icon/boost/f2?rev=209">
+                                </div>
+                                <div class="student-name">
+                                    Семен Семенов
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=10&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/69/user/icon/boost/f2?rev=218">
+                                </div>
+                                <div class="student-name">
+                                    Федор Федоров
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://localhost/user/view.php?id=16&amp;amp;course=">
+                            <div class="gst-student">
+                                <div class="student-image">
+                                    <img src="http://localhost/pluginfile.php/75/user/icon/boost/f2?rev=146">
+                                </div>
+                                <div class="student-name">
+                                    Виктория Частая
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="good-attending-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            С 1-м прогулом
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                    </div>
+                </div>
+                <div id="okay-attending-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Успевающие
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                    </div>
+                </div>
+                <div id="bad-attending-students-list" class="student-list hide">
+                    <div class="gst-line-bold">
+                        <div class="gst-line-text">
+                            Не посещающие занятия
+                        </div>
+                    </div>
+                    <div class="gst-students-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gst-tabs-contents hide" id="group-payment">
+            <div class="gst-pie-diagram">
+                <canvas id="gst-pie-diagram-payment" style="display: block; box-sizing: border-box; height: 230px; width: 230px;" width="230" height="230"></canvas>
+            </div>
+            <div class="group-payment">
+                <div class="gst-line-bold">
+                    <div class="diagram-sample-color gst-color-bad"></div>
+                    <div class="gst-line-text">
+                        Не оплатили
+                    </div>
+                </div>
+                <div class="gst-students-list">
+                </div>
+                <div class="gst-line-bold">
+                    <div class="diagram-sample-color gst-color-well"></div>
+                    <div class="gst-line-text">
+                        Оплатили недавно
+                    </div>
+                </div>
+                <div class="gst-students-list">
+                    <a href="http://localhost/user/view.php?id=7&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/66/user/icon/boost/f2?rev=119">
+                            </div>
+                            <div class="student-name">
+                                Алексей Алексеев
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=6&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/51/user/icon/boost/f2?rev=71">
+                            </div>
+                            <div class="student-name">
+                                Андрей Андреев
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=8&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/67/user/icon/boost/f2?rev=137">
+                            </div>
+                            <div class="student-name">
+                                Артем Артемьев
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=5&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/50/user/icon/boost/f2?rev=80">
+                            </div>
+                            <div class="student-name">
+                                Виктор Викторов
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=17&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/76/user/icon/boost/f2?rev=128">
+                            </div>
+                            <div class="student-name">
+                                Анастасия Викторова
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=11&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/70/user/icon/boost/f2?rev=164">
+                            </div>
+                            <div class="student-name">
+                                Виталий Витальев
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=14&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/73/user/icon/boost/f2?rev=173">
+                            </div>
+                            <div class="student-name">
+                                Даниил Данилов
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=3&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/48/user/icon/boost/f2?rev=89">
+                            </div>
+                            <div class="student-name">
+                                Иван Иванов
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=12&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/71/user/icon/boost/f2?rev=191">
+                            </div>
+                            <div class="student-name">
+                                Константин Константинов
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=13&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/72/user/icon/boost/f2?rev=200">
+                            </div>
+                            <div class="student-name">
+                                Матвей Матвеев
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=4&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/49/user/icon/boost/f2?rev=98">
+                            </div>
+                            <div class="student-name">
+                                Петр Петров
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=15&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/74/user/icon/boost/f2?rev=182">
+                            </div>
+                            <div class="student-name">
+                                Екатерина Редкая
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=18&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/77/user/icon/boost/f2?rev=155">
+                            </div>
+                            <div class="student-name">
+                                Виктория Романова
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=9&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/68/user/icon/boost/f2?rev=209">
+                            </div>
+                            <div class="student-name">
+                                Семен Семенов
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=10&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/69/user/icon/boost/f2?rev=218">
+                            </div>
+                            <div class="student-name">
+                                Федор Федоров
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://localhost/user/view.php?id=16&amp;amp;course=">
+                        <div class="gst-student">
+                            <div class="student-image">
+                                <img src="http://localhost/pluginfile.php/75/user/icon/boost/f2?rev=146">
+                            </div>
+                            <div class="student-name">
+                                Виктория Частая
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
             <!----------------to here------------------->
         </div>
         <!-- scripts here -->

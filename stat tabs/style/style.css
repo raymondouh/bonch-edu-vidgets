@@ -34,37 +34,49 @@ html {
 
 /*----------------copy from here-------------------*/
 
-.gst-color-well{
-    background: rgba(89, 154, 78, 0.5);
+.group-stats .gst-color-well{
+    background: #accca6;
 }
-.gst-color-good{
-    background: rgba(219, 214, 98, 0.5);
+.group-stats .gst-color-good{
+    background: #edeab0;
 }
-.gst-color-okay{
-    background: rgba(215, 136, 63, 1);
+.group-stats .gst-color-okay{
+    background: #d7883f;
 }
-.gst-color-bad{
-    background: rgba(186, 67, 67, 0.5);
+.group-stats .gst-color-bad{
+    background: #dca1a1;
 }
 
-.active {
+.group-stats .active {
     font-style: normal;
-    font-weight: bold !important;
+    font-weight: bold;
     font-size: 18px;
     line-height: 21px;
-    color: #353535 !important;
+    color: #353535;
 }
 
-.hide, .hide-list {
+.group-stats .gst-tabs-contents.hide,
+.group-stats .student-list.hide {
     display: none !important;
 }
 
-.show-list{
+.group-stats .show
+{
+    display: flex;
+}
+
+.group-stats .student-list.show{
     display: block;
 }
 
-.show {
-    display: flex !important;
+.group-performance .gst-line.active,
+.group-attendance .gst-line.active{
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 5px;
+    outline: 1px solid #599A4E;
+    background: #599A4E;
+    color: white;
 }
 
 .diagram-sample-color{
@@ -75,17 +87,13 @@ html {
     margin-right: 5px;
 }
 
-.group-attendance .diagram-sample-color,
-.group-payment .diagram-sample-color{
-    //margin-top: 3px;
-}
-
 .group-stats {
+    max-width: 700px;
+    margin: 0 auto;
     min-height: 270px;
     color: #353535;
     width: 100%;
     transition: .3s;
-    //transition-property: height;
 }
 
 .gst-tabs {
@@ -115,10 +123,10 @@ html {
 .gst-tab-content{}
 
 .gst-pie-diagram {
+    padding: 5px;
     margin-top: 15px;
-    width: 220px;
-    height: 220px;
-    padding-right: 5px;
+    width: 240px;
+    height: 240px;
     margin-right: 35px;
 }
 
@@ -150,7 +158,14 @@ html {
     line-height: 21px;
 }
 
+.group-performance .gst-line:hover,
+.group-attendance .gst-line:hover{
+    border-radius: 5px;
+    outline: 1px solid #599A4E;
+}
+
 .gst-line {
+    padding: 3px;
     margin-top: 10px;
     font-style: normal;
     font-weight: normal;
@@ -166,17 +181,18 @@ html {
     flex: auto;
     font-weight: bold;
     font-style: normal;
-    font-weight: 900;
     font-size: 14px;
     line-height: 14px;
 }
 
 .gst-students-list {
+    padding-top: 3px;
     margin-top: 10px;
     display: flex;
     flex-wrap: nowrap;
     max-width: 440px;
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .gst-students-list a{
@@ -207,6 +223,7 @@ html {
 
 .student-image img {
     width: 100%;
+    height: 100%;
 }
 
 .student-name {
@@ -215,21 +232,6 @@ html {
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
-}
-
-.group-attendance .gst-line {
-    flex: auto;
-    max-width: 300px;
-    margin-top: 5px;
-    font-style: normal;
-    font-weight: normal;
-    //font-size: 18px;
-    //line-height: 21px;
-}
-
-.group-attendance .gst-line-value{
-    font-size: 15px;
-    line-height: 21px;
 }
 
 @media(max-width: 510px){

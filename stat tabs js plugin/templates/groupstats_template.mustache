@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="gst-tabs-contents" id="group-performance">
+        <div class="gst-tabs-contents show" id="group-performance">
 
             <div class="gst-pie-diagram">
                 <canvas id="gst-pie-diagram-performance" width="100%" height="100%"></canvas>
@@ -33,7 +33,7 @@
                         Отличники
                     </div>
                     <div class="gst-line-value">
-                        30/{{groupmemberscount}}
+                        {{wellstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="good-students">
@@ -42,7 +42,7 @@
                         Хорошисты
                     </div>
                     <div class="gst-line-value">
-                        6/{{groupmemberscount}}
+                        {{goodstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="okay-students">
@@ -51,7 +51,7 @@
                         Успевающие
                     </div>
                     <div class="gst-line-value">
-                        4/{{groupmemberscount}}
+                        {{okaystudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="bad-students">
@@ -60,10 +60,10 @@
                         Неуспевающие
                     </div>
                     <div class="gst-line-value">
-                        5/{{groupmemberscount}}
+                        {{badstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
-                <div id="well-students-list" class="show-list">
+                <div id="well-students-list" class="student-list show">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Отличники
@@ -84,7 +84,7 @@
                         {{/wellstudents}}
                     </div>
                 </div>
-                <div id="good-students-list" class="hide-list">
+                <div id="good-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Хорошисты
@@ -105,7 +105,7 @@
                         {{/goodstudents}}
                     </div>
                 </div>
-                <div id="okay-students-list" class="hide-list">
+                <div id="okay-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Успевающие
@@ -126,7 +126,7 @@
                         {{/okaystudents}}
                     </div>
                 </div>
-                <div id="bad-students-list" class="hide-list">
+                <div id="bad-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Неуспевающие
@@ -171,7 +171,7 @@
                         Без прогулов
                     </div>
                     <div class="gst-line-value">
-                        35/{{groupmemberscount}}
+                        {{wellattendingstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="good-attending-students">
@@ -180,7 +180,7 @@
                         С 1-м прогулом
                     </div>
                     <div class="gst-line-value">
-                        6/{{groupmemberscount}}
+                        {{goodattendingstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="okay-attending-students">
@@ -189,7 +189,7 @@
                         Успевающие
                     </div>
                     <div class="gst-line-value">
-                        3/{{groupmemberscount}}
+                        {{okayattendingstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
                 <div class="gst-line" id="bad-attending-students">
@@ -198,10 +198,10 @@
                         Не посещающие занятия
                     </div>
                     <div class="gst-line-value">
-                        1/{{groupmemberscount}}
+                        {{badattendingstudentscount}}/{{groupmemberscount}}
                     </div>
                 </div>
-                <div id="well-attending-students-list" class="show-list">
+                <div id="well-attending-students-list" class="student-list show">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Без прогулов
@@ -222,7 +222,7 @@
                         {{/wellattendingstudents}}
                     </div>
                 </div>
-                <div id="good-attending-students-list" class="hide-list">
+                <div id="good-attending-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             С 1-м прогулом
@@ -243,7 +243,7 @@
                         {{/goodattendingstudents}}
                     </div>
                 </div>
-                <div id="okay-attending-students-list" class="hide-list">
+                <div id="okay-attending-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Успевающие
@@ -264,7 +264,7 @@
                         {{/okayattendingstudents}}
                     </div>
                 </div>
-                <div id="bad-attending-students-list" class="hide-list">
+                <div id="bad-attending-students-list" class="student-list hide">
                     <div class="gst-line-bold">
                         <div class="gst-line-text">
                             Не посещающие занятия

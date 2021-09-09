@@ -1,36 +1,46 @@
 .group-stats .gst-color-well{
-    background: rgba(89, 154, 78, 0.5);
+    background: #accca6;
 }
 .group-stats .gst-color-good{
-    background: rgba(219, 214, 98, 0.5);
+    background: #edeab0;
 }
 .group-stats .gst-color-okay{
-    background: rgba(215, 136, 63, 1);
+    background: #d7883f;
 }
 .group-stats .gst-color-bad{
-    background: rgba(186, 67, 67, 0.5);
+    background: #dca1a1;
 }
 
 .group-stats .active {
     font-style: normal;
-    font-weight: bold !important;
+    font-weight: bold;
     font-size: 18px;
     line-height: 21px;
-    color: #353535 !important;
+    color: #353535;
 }
 
-.group-stats .hide,
-.group-stats .hide-list {
+.group-stats .gst-tabs-contents.hide,
+.group-stats .student-list.hide {
     display: none !important;
 }
 
 .group-stats .show
 {
-    display: flex !important;
+    display: flex;
 }
 
-.group-stats .show-list{
+.group-stats .student-list.show{
     display: block;
+}
+
+.group-performance .gst-line.active,
+.group-attendance .gst-line.active{
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 5px;
+    outline: 1px solid #599A4E;
+    background: #599A4E;
+    color: white;
 }
 
 .diagram-sample-color{
@@ -110,13 +120,6 @@
 
 .gst-line-bold .gst-line-value {
     line-height: 21px;
-}
-
-.group-performance .gst-line.selected,
-.group-attendance .gst-line.selected{
-    border-radius: 5px;
-    outline: 1px solid #599A4E;
-    background: #599A4E;
 }
 
 .group-performance .gst-line:hover,

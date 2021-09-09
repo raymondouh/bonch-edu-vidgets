@@ -1,33 +1,29 @@
 define([], function() {
     "use strict";
 
-    function init(params, params1, params2) {
+    function init(groupmemberscount,
+                    wellstudentscount,
+                    goodstudentscount,
+                    okaystudentscount,
+                    badstudentscount,
+                    wellattendingstudentscount,
+                    goodattendingstudentscount,
+                    okayattendingstudentscount,
+                    badattendingstudentscount,
+                    paystudentscount,
+                    didntpaystudentscount) {
 
-        console.log(params);
-        console.log(params1);
-        console.log(params2);
-
-        let lastTab;
-        let lastTabContent;
-
-        let pieDiagramPerformance;
-        let pieDiagramAttendance;
-        let pieDiagramPayment;
-
-        let groupPerformanceTab;
-        let groupAttendanceTab;
-        let groupPaymentTab;
         let performanceChart = {
             type: 'pie',
             data: {
-                labels: ['Обгоняют', 'Не допущены', 'Неуспевающие', 'Успевающие'],
+                labels: ['Хорошисты', 'Успевающие', 'Неуспевающие', 'Отличники'],
                 datasets: [{
-                    data: [6, 4, 5, 30],
+                    data: [goodstudentscount, okaystudentscount, badstudentscount, wellstudentscount],
                     backgroundColor: [
-                        'rgba(219, 214, 98, 0.5)',
-                        'rgba(215, 136, 63, 1)',
-                        'rgba(186, 67, 67, 0.5)',
-                        'rgba(89, 154, 78, 0.5)',
+                        '#edeab0',
+                        '#d7883f',
+                        '#dca1a1',
+                        '#accca6'
                     ],
                     borderWidth: 1,
                     hoverBorderWidth: 3,
@@ -48,12 +44,12 @@ define([], function() {
             data: {
                 labels: ['С 1м прогулом', 'Успевающие', 'Не посещающие занятия', 'Без прогулов'],
                 datasets: [{
-                    data: [6, 3, 1, 35],
+                    data: [goodattendingstudentscount, okayattendingstudentscount, badattendingstudentscount, wellattendingstudentscount],
                     backgroundColor: [
-                        'rgba(219, 214, 98, 0.5)',
-                        'rgba(215, 136, 63, 1)',
-                        'rgba(186, 67, 67, 0.5)',
-                        'rgba(89, 154, 78, 0.5)',
+                        '#edeab0',
+                        '#d7883f',
+                        '#dca1a1',
+                        '#accca6'
                     ],
                     borderWidth: 1,
                     hoverBorderWidth: 3,
@@ -74,10 +70,10 @@ define([], function() {
             data: {
                 labels: ['Не оплатили', 'Оплатили недавно'],
                 datasets: [{
-                    data: [4, 4],
+                    data: [didntpaystudentscount, paystudentscount],
                     backgroundColor: [
-                        'rgba(186, 67, 67, 0.5)',
-                        'rgba(89, 154, 78, 0.5)',
+                        '#dca1a1',
+                        '#accca6'
                     ],
                     borderWidth: 1,
                     hoverBorderWidth: 3,
@@ -92,167 +88,88 @@ define([], function() {
                 }
             }
         }
-        /********************************************************/
-        let studentsWell = document.getElementById('well-students');
-        let studentsGood = document.getElementById('good-students');
-        let studentsOkay = document.getElementById('okay-students');
-        let studentsBad = document.getElementById('bad-students');
-        let studentsWellList = document.getElementById('well-students-list');
-        let studentsGoodList = document.getElementById('good-students-list');
-        let studentsOkayList = document.getElementById('okay-students-list');
-        let studentsBadList = document.getElementById('bad-students-list');
-        let lastPerformanceList = studentsWellList;
-        let lastPerformanceListTitle = studentsWell;
 
-        studentsWell.addEventListener('click', () => {
-            closeListTab(lastPerformanceListTitle);
-            openListTab(studentsWell);
-            lastPerformanceListTitle = studentsWell;
-            closeList(lastPerformanceList);
-            openList(studentsWellList);
-            lastPerformanceList = studentsWellList;
-        });
-        studentsGood.addEventListener('click', () => {
-            closeListTab(lastPerformanceListTitle);
-            openListTab(studentsGood);
-            lastPerformanceListTitle = studentsGood;
-            closeList(lastPerformanceList);
-            openList(studentsGoodList);
-            lastPerformanceList = studentsGoodList;
-        });
-        studentsOkay.addEventListener('click', () => {
-            closeListTab(lastPerformanceListTitle);
-            openListTab(studentsOkay);
-            lastPerformanceListTitle = studentsOkay;
-            closeList(lastPerformanceList);
-            openList(studentsOkayList);
-            lastPerformanceList = studentsOkayList;
-        });
-        studentsBad.addEventListener('click', () => {
-            closeListTab(lastPerformanceListTitle);
-            openListTab(studentsBad);
-            lastPerformanceListTitle = studentsBad;
-            closeList(lastPerformanceList);
-            openList(studentsBadList);
-            lastPerformanceList = studentsBadList;
-        });
+        let lastAttendanceList = document.getElementById('well-attending-students-list');
+        let lastPerformanceList = document.getElementById('well-students-list');
+        let lastAttendanceSwitch = document.getElementById('well-attending-students');
+        let lastPerformanceSwitch = document.getElementById('well-students');
+        let lastGroupTab = document.getElementById('GroupPerformanceTab');
+        let lastGroupContentTab = document.getElementById('group-performance');
 
-        let studentsAttendingWell = document.getElementById('well-attending-students');
-        let studentsAttendingGood = document.getElementById('good-attending-students');
-        let studentsAttendingOkay = document.getElementById('okay-attending-students');
-        let studentsAttendingBad = document.getElementById('bad-attending-students');
-        let studentsAttendingWellList = document.getElementById('well-attending-students-list');
-        let studentsAttendingGoodList = document.getElementById('good-attending-students-list');
-        let studentsAttendingOkayList = document.getElementById('okay-attending-students-list');
-        let studentsAttendingBadList = document.getElementById('bad-attending-students-list');
-        let lastAttendanceList = studentsAttendingWellList;
-        let lastAttendanceListTitle = studentsAttendingWell
+        let pieDiagramPerformance = document.getElementById('gst-pie-diagram-performance');
+        let pieDiagramAttendance = document.getElementById('gst-pie-diagram-attendance');
+        let pieDiagramPayment = document.getElementById('gst-pie-diagram-payment');
 
-        studentsAttendingWell.addEventListener('click', () => {
-            closeListTab(lastAttendanceListTitle);
-            openListTab(studentsAttendingWell);
-            lastAttendanceListTitle = studentsAttendingWell;
-            closeList(lastAttendanceList);
-            openList(studentsAttendingWellList);
-            lastAttendanceList = studentsAttendingWellList;
-        });
-        studentsAttendingGood.addEventListener('click', () => {
-            closeListTab(lastAttendanceListTitle);
-            openListTab(studentsAttendingGood);
-            lastAttendanceListTitle = studentsAttendingGood;
-            closeList(lastAttendanceList);
-            openList(studentsAttendingGoodList);
-            lastAttendanceList = studentsAttendingGoodList;
-        });
-        studentsAttendingOkay.addEventListener('click', () => {
-            closeListTab(lastAttendanceListTitle);
-            openListTab(studentsAttendingOkay);
-            lastAttendanceListTitle = studentsAttendingOkay;
-            closeList(lastAttendanceList);
-            openList(studentsAttendingOkayList);
-            lastAttendanceList = studentsAttendingOkayList;
-        });
-        studentsAttendingBad.addEventListener('click', () => {
-            closeListTab(lastAttendanceListTitle);
-            openListTab(studentsAttendingOkay);
-            lastAttendanceListTitle = studentsAttendingOkay;
-            closeList(lastAttendanceList);
-            openList(studentsAttendingBadList);
-            lastAttendanceList = studentsAttendingBadList;
-        });
-        /********************************************************/
-        pieDiagramPerformance = document.getElementById('gst-pie-diagram-performance');
-        pieDiagramAttendance = document.getElementById('gst-pie-diagram-attendance');
-        pieDiagramPayment = document.getElementById('gst-pie-diagram-payment');
-
-        groupPerformanceTab = document.getElementById('group-performance');
-        groupAttendanceTab = document.getElementById('group-attendance');
-        groupPaymentTab = document.getElementById('group-payment');
-
-        lastTab = document.getElementById('GroupPerformanceTab');
-        lastTabContent = groupPerformanceTab;
+        let performanceListSwitchIds = ['well-students', 'good-students', 'okay-students', 'bad-students'];
+        let performanceListIds = ['well-students-list', 'good-students-list', 'okay-students-list', 'bad-students-list'];
+        let attendanceListIds = ['well-attending-students-list', 'good-attending-students-list', 'okay-attending-students-list', 'bad-attending-students-list'];
+        let attendanceListSwitchIds = ['well-attending-students', 'good-attending-students', 'okay-attending-students', 'bad-attending-students'];
+        let groupTabsIds = ['GroupPerformanceTab', 'GroupAttendanceTab', 'GroupPaymentTab'];
+        let groupTabsContentIds = ['group-performance', 'group-attendance', 'group-payment'];
 
         new Chart(pieDiagramPerformance, performanceChart);
         new Chart(pieDiagramAttendance, attendanceChart);
         new Chart(pieDiagramPayment, paymentChart);
 
-        document.getElementById('GroupPerformanceTab').addEventListener("click", () => {
-            closePreviousTab();
-            setActiveTab(event.target);
-            showTabContent(groupPerformanceTab);
-        });
-        document.getElementById('GroupAttendanceTab').addEventListener("click", () => {
-            closePreviousTab();
-            setActiveTab(event.target);
-            showTabContent(groupAttendanceTab);
-        });
-        document.getElementById('GroupPaymentTab').addEventListener("click", () => {
-            closePreviousTab();
-            setActiveTab(event.target);
-            showTabContent(groupPaymentTab);
-        });
+        addTabListeners(groupTabsIds, groupTabsContentIds);
+        addListListeners(performanceListSwitchIds, performanceListIds, "performance");
+        addListListeners(attendanceListSwitchIds, attendanceListIds, "attendance");
 
-        function closePreviousTab() {
-            setInactiveTab(lastTab);
-            hideTabContent(lastTabContent);
+        function setActive(element) {
+            element.classList.add('active');
         }
 
-        function setActiveTab(tab) {
-            tab.classList.add('active');
-            lastTab = tab;
-        }
-
-        function setInactiveTab(tab) {
-            tab.classList.remove('active');
+        function setInactive(element) {
+            element.classList.remove('active');
         }
 
         function showTabContent(tabContent) {
             tabContent.classList.remove('hide');
             tabContent.classList.add('show');
-            lastTabContent = tabContent;
         }
 
         function hideTabContent(tabContent) {
             tabContent.classList.remove('show');
             tabContent.classList.add('hide');
         }
-        /********************************************************/
-        function closeList(list) {
-            list.classList.remove('show-list');
-            list.classList.add('hide-list');
+
+        function addTabListeners(tabIds, contentIds) {
+            for (var i = 0; i < tabIds.length; i++) {
+                let element = document.getElementById(tabIds[i]);
+                let content = document.getElementById(contentIds[i]);
+                element.addEventListener('click', () => {
+                    setInactive(lastGroupTab);
+                    hideTabContent(lastGroupContentTab);
+                    setActive(element);
+                    showTabContent(content);
+                    lastGroupTab = element;
+                    lastGroupContentTab = content;
+                });
+            }
         }
 
-        function openList(list) {
-            list.classList.remove('hide-list');
-            list.classList.add('show-list');
-        }
-
-        function closeListTab(tab) {
-            tab.classList.remove('selected');
-        }
-
-        function openListTab(tab) {
-            tab.classList.add('selected');
+        function addListListeners(switchIds, contentIds, parameter) {
+            for (var i = 0; i < switchIds.length; i++) {
+                let element = document.getElementById(switchIds[i]);
+                let content = document.getElementById(contentIds[i]);
+                element.addEventListener('click', () => {
+                    if (parameter === "performance") {
+                        setInactive(lastPerformanceSwitch);
+                        hideTabContent(lastPerformanceList);
+                        setActive(element);
+                        showTabContent(content);
+                        lastPerformanceSwitch = element;
+                        lastPerformanceList = content;
+                    } else if (parameter === "attendance") {
+                        setInactive(lastAttendanceSwitch);
+                        hideTabContent(lastAttendanceList);
+                        setActive(element);
+                        showTabContent(content);
+                        lastAttendanceSwitch = element;
+                        lastAttendanceList = content;
+                    }
+                });
+            }
         }
     }
 

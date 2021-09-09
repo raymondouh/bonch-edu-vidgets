@@ -1,7 +1,12 @@
 define([], function() {
     "use strict";
 
-    function init() {
+    function init(params, params1, params2) {
+
+        console.log(params);
+        console.log(params1);
+        console.log(params2);
+
         let lastTab;
         let lastTabContent;
 
@@ -87,7 +92,95 @@ define([], function() {
                 }
             }
         }
+        /********************************************************/
+        let studentsWell = document.getElementById('well-students');
+        let studentsGood = document.getElementById('good-students');
+        let studentsOkay = document.getElementById('okay-students');
+        let studentsBad = document.getElementById('bad-students');
+        let studentsWellList = document.getElementById('well-students-list');
+        let studentsGoodList = document.getElementById('good-students-list');
+        let studentsOkayList = document.getElementById('okay-students-list');
+        let studentsBadList = document.getElementById('bad-students-list');
+        let lastPerformanceList = studentsWellList;
+        let lastPerformanceListTitle = studentsWell;
 
+        studentsWell.addEventListener('click', () => {
+            closeListTab(lastPerformanceListTitle);
+            openListTab(studentsWell);
+            lastPerformanceListTitle = studentsWell;
+            closeList(lastPerformanceList);
+            openList(studentsWellList);
+            lastPerformanceList = studentsWellList;
+        });
+        studentsGood.addEventListener('click', () => {
+            closeListTab(lastPerformanceListTitle);
+            openListTab(studentsGood);
+            lastPerformanceListTitle = studentsGood;
+            closeList(lastPerformanceList);
+            openList(studentsGoodList);
+            lastPerformanceList = studentsGoodList;
+        });
+        studentsOkay.addEventListener('click', () => {
+            closeListTab(lastPerformanceListTitle);
+            openListTab(studentsOkay);
+            lastPerformanceListTitle = studentsOkay;
+            closeList(lastPerformanceList);
+            openList(studentsOkayList);
+            lastPerformanceList = studentsOkayList;
+        });
+        studentsBad.addEventListener('click', () => {
+            closeListTab(lastPerformanceListTitle);
+            openListTab(studentsBad);
+            lastPerformanceListTitle = studentsBad;
+            closeList(lastPerformanceList);
+            openList(studentsBadList);
+            lastPerformanceList = studentsBadList;
+        });
+
+        let studentsAttendingWell = document.getElementById('well-attending-students');
+        let studentsAttendingGood = document.getElementById('good-attending-students');
+        let studentsAttendingOkay = document.getElementById('okay-attending-students');
+        let studentsAttendingBad = document.getElementById('bad-attending-students');
+        let studentsAttendingWellList = document.getElementById('well-attending-students-list');
+        let studentsAttendingGoodList = document.getElementById('good-attending-students-list');
+        let studentsAttendingOkayList = document.getElementById('okay-attending-students-list');
+        let studentsAttendingBadList = document.getElementById('bad-attending-students-list');
+        let lastAttendanceList = studentsAttendingWellList;
+        let lastAttendanceListTitle = studentsAttendingWell
+
+        studentsAttendingWell.addEventListener('click', () => {
+            closeListTab(lastAttendanceListTitle);
+            openListTab(studentsAttendingWell);
+            lastAttendanceListTitle = studentsAttendingWell;
+            closeList(lastAttendanceList);
+            openList(studentsAttendingWellList);
+            lastAttendanceList = studentsAttendingWellList;
+        });
+        studentsAttendingGood.addEventListener('click', () => {
+            closeListTab(lastAttendanceListTitle);
+            openListTab(studentsAttendingGood);
+            lastAttendanceListTitle = studentsAttendingGood;
+            closeList(lastAttendanceList);
+            openList(studentsAttendingGoodList);
+            lastAttendanceList = studentsAttendingGoodList;
+        });
+        studentsAttendingOkay.addEventListener('click', () => {
+            closeListTab(lastAttendanceListTitle);
+            openListTab(studentsAttendingOkay);
+            lastAttendanceListTitle = studentsAttendingOkay;
+            closeList(lastAttendanceList);
+            openList(studentsAttendingOkayList);
+            lastAttendanceList = studentsAttendingOkayList;
+        });
+        studentsAttendingBad.addEventListener('click', () => {
+            closeListTab(lastAttendanceListTitle);
+            openListTab(studentsAttendingOkay);
+            lastAttendanceListTitle = studentsAttendingOkay;
+            closeList(lastAttendanceList);
+            openList(studentsAttendingBadList);
+            lastAttendanceList = studentsAttendingBadList;
+        });
+        /********************************************************/
         pieDiagramPerformance = document.getElementById('gst-pie-diagram-performance');
         pieDiagramAttendance = document.getElementById('gst-pie-diagram-attendance');
         pieDiagramPayment = document.getElementById('gst-pie-diagram-payment');
@@ -118,6 +211,7 @@ define([], function() {
             setActiveTab(event.target);
             showTabContent(groupPaymentTab);
         });
+
         function closePreviousTab() {
             setInactiveTab(lastTab);
             hideTabContent(lastTabContent);
@@ -141,6 +235,24 @@ define([], function() {
         function hideTabContent(tabContent) {
             tabContent.classList.remove('show');
             tabContent.classList.add('hide');
+        }
+        /********************************************************/
+        function closeList(list) {
+            list.classList.remove('show-list');
+            list.classList.add('hide-list');
+        }
+
+        function openList(list) {
+            list.classList.remove('hide-list');
+            list.classList.add('show-list');
+        }
+
+        function closeListTab(tab) {
+            tab.classList.remove('selected');
+        }
+
+        function openListTab(tab) {
+            tab.classList.add('selected');
         }
     }
 

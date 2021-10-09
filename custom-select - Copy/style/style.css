@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+html, body, .center-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F8FFF3;
+}
+
+html {
+    overflow: hidden;
+}
+
+.center-container {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.palette {
+    background: #fff;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px #ECECEC;
+    border-radius: 10px;
+}
+
+/***************************************************/
+.test-widget {
+    margin: 0 auto;
+    width: 250px;
+    height: 600px;
+}
+
+.cs-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+}
+
+.cs-group-select .hide,
+.cs-cource-select .hide{
+    display: none;
+    transition: height .3s linear;
+}
+
+.cs-group-select{
+    z-index: 5;
+}
+
+.cs-cource-select{
+    z-index: 7;
+}
+
+.cs-group-select .show,
+.cs-cource-select .show{
+    display: block;
+    transition: height .3s linear;
+}
+
+.cs-group-select,
+.cs-cource-select {
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cs-group-line,
+.cs-cource-line {
+    min-height: 35px;
+    flex-wrap: nowrap;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+
+
+    background: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cs-group-list,
+.cs-cource-list{
+    width: 100%;
+    position: absolute;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.cs-group-list .cs-group-line:hover,
+.cs-cource-list .cs-cource-line:hover{
+    border-radius: 0;
+    color: green;
+    border-bottom: 1px solid green;
+}
+
+.cs-group-line.current-line .cs-group-selector,
+.cs-cource-line.current-line .cs-cource-selector {
+    transition: .3s;
+}
+
+.cs-group-line.current-line.active,
+.cs-cource-line.current-line.active  {
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+.cs-group-line.current-line.active .cs-group-selector,
+.cs-cource-line.current-line.active .cs-cource-selector {
+    transform: rotate(-180deg);
+    transition: .3s;
+}
+
+.cs-group-line.current-line.active .cs-group-selector svg,
+.cs-cource-line.current-line.active .cs-cource-selector svg {
+    stroke: green;
+}
+
+.cs-group-line.current-line:hover,
+.cs-cource-line.current-line:hover {
+    border: 1px solid green;
+}
+
+.cs-group-line.current-line:hover .cs-group-selector svg,
+.cs-cource-line.current-line:hover .cs-cource-selector svg  {
+    stroke: green;
+}
+
+.current-line svg,
+.current-line svg{
+    fill: none!important;
+}
+
+.cs-group-line:hover svg,
+.cs-cource-line:hover svg{
+    fill: green;
+}
+
+.cs-group-logo,
+.cs-cource-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cs-group-logo img,
+.cs-cource-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.cs-group-name,
+.cs-cource-name {
+    height: inherit;
+    max-width: 150px;
+    word-wrap: break-word;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    margin-left: 15px;
+}
+
+.cs-group-selector,
+.cs-cource-selector {
+    margin-left: auto;
+}
+
+.cs-group-selector svg,
+.cs-cource-selector svg {
+    display: block;
+    stroke: #C0C7BA
+}
+
+.cs-data-section{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.cs-division-line {
+    margin-top: 20px;
+    margin-left: 30px;
+    height: 1px;
+    background: #bfbfbf;
+}
